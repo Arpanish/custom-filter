@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Search</title>
+</head>
+<body>
+    <form method="GET" action="{%url 'search'%}">
+        <input type="search" name="q" placeholder="Search employee">
+        <button type="submit">Search</button>
+    </form>
+    {% for employee in employees %}
+        <ul>
+            <li>Name: {{ employee.name }}</li>
+            <li>Address: {{ employee.address }}</li>
+        </ul>
+    {% endfor %}
+   {% for result in search_results %}
+        <ul>
+            <li>Name: {{ result.name }}</li>
+            <li>Email: {{ result.address }}</li>
+        </ul>
+    {% endfor %}
+
+</body>
+</html>
